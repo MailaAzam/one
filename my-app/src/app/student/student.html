@@ -1,0 +1,25 @@
+<h2>{{ title }}</h2> <!-- One-way binding -->
+
+<!-- Input for two-way binding -->
+<input [(ngModel)]="studentName" placeholder="Enter student name">
+
+<!-- Button to add student -->
+<button (click)="addStudent()">Add Student</button>
+
+<!-- Message if no students -->
+<p *ngIf="students.length === 0">No students added yet</p>
+
+<!-- List of students -->
+<ul>
+  <li *ngFor="let s of students">{{ s }}</li>
+</ul>
+
+<hr>
+
+<!-- Reactive Form input -->
+<form [formGroup]="studentForm">
+  <input formControlName="name" placeholder="Reactive Form Name">
+</form>
+
+<!-- Load students from API -->
+<button (click)="loadStudents()">Load Students from API</button>
